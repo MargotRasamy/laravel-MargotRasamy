@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WebsiteController::class, 'index'])->name('homepage');
 Route::get('/products-list', [WebsiteController::class, 'productsList'])->name('products-list');
-Route::get('/product', [WebsiteController::class, 'product'])->name('product');
+Route::get('/product-detail', [WebsiteController::class, 'productDetail'])->name('product-detail');
+Route::resource('/pro', ProductController::class);

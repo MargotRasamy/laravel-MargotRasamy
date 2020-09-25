@@ -112,25 +112,25 @@
             <div class="row mb-5">
 
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/prod_2.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Gray Shoe</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Gray Shoe</a></h2>
                 <strong class="item-price">$20.00</strong>
               </div>
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/prod_3.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Blue Shoe High Heels</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Blue Shoe High Heels</a></h2>
                 <strong class="item-price"><del>$46.00</del> $28.00</strong>
               </div>
 
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/model_5.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Denim Jacket</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Denim Jacket</a></h2>
                 <strong class="item-price"><del>$46.00</del> $28.00</strong>
 
                 <div class="star-rating">
@@ -143,10 +143,10 @@
 
               </div>
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/prod_1.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Leather Green Bag</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Leather Green Bag</a></h2>
                 <strong class="item-price"><del>$46.00</del> $28.00</strong>
                 <div class="star-rating">
                   <span class="icon-star2 text-warning"></span>
@@ -158,39 +158,39 @@
               </div>
 
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/model_1.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Smooth Cloth</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Smooth Cloth</a></h2>
                 <strong class="item-price"><del>$46.00</del> $28.00</strong>
               </div>
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/model_7.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Yellow Jacket</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Yellow Jacket</a></h2>
                 <strong class="item-price">$58.00</strong>
               </div>
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/prod_2.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Gray Shoe</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Gray Shoe</a></h2>
                 <strong class="item-price">$20.00</strong>
               </div>
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/prod_3.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Blue Shoe High Heels</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Blue Shoe High Heels</a></h2>
                 <strong class="item-price"><del>$46.00</del> $28.00</strong>
               </div>
 
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/model_5.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Denim Jacket</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Denim Jacket</a></h2>
                 <strong class="item-price"><del>$46.00</del> $28.00</strong>
 
                 <div class="star-rating">
@@ -203,10 +203,10 @@
 
               </div>
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/prod_1.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Leather Green Bag</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Leather Green Bag</a></h2>
                 <strong class="item-price"><del>$46.00</del> $28.00</strong>
                 <div class="star-rating">
                   <span class="icon-star2 text-warning"></span>
@@ -218,17 +218,17 @@
               </div>
 
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/model_1.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Smooth Cloth</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Smooth Cloth</a></h2>
                 <strong class="item-price"><del>$46.00</del> $28.00</strong>
               </div>
               <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="{{ route('product') }}" class="product-item md-height bg-gray d-block">
+                <a href="{{ route('product-detail') }}" class="product-item md-height bg-gray d-block">
                   <img src="images/model_7.png" alt="Image" class="img-fluid">
                 </a>
-                <h2 class="item-title"><a href="{{ route('product') }}">Yellow Jacket</a></h2>
+                <h2 class="item-title"><a href="{{ route('product-detail') }}">Yellow Jacket</a></h2>
                 <strong class="item-price">$58.00</strong>
               </div>
             </div>
@@ -236,13 +236,13 @@
               <div class="col-md-12 text-center">
                 <div class="site-block-27">
                   <ul>
-                    <li><a href="{{ route('product') }}">&lt;</a></li>
+                    <li><a href="{{ route('product-detail') }}">&lt;</a></li>
                     <li class="active"><span>1</span></li>
-                    <li><a href="{{ route('product') }}">2</a></li>
-                    <li><a href="{{ route('product') }}">3</a></li>
-                    <li><a href="{{ route('product') }}">4</a></li>
-                    <li><a href="{{ route('product') }}">5</a></li>
-                    <li><a href="{{ route('product') }}">&gt;</a></li>
+                    <li><a href="{{ route('product-detail') }}">2</a></li>
+                    <li><a href="{{ route('product-detail') }}">3</a></li>
+                    <li><a href="{{ route('product-detail') }}">4</a></li>
+                    <li><a href="{{ route('product-detail') }}">5</a></li>
+                    <li><a href="{{ route('product-detail') }}">&gt;</a></li>
                   </ul>
                 </div>
               </div>
