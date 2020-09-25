@@ -21,4 +21,8 @@ class WebsiteController extends Controller
     public function productDetail() {
         return view('/layouts/product-detail'); 
     }
+
+    public function backOffice() {
+        return view('/backoffice'); 
+    }
 }
