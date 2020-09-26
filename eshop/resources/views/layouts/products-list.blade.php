@@ -132,13 +132,13 @@
               <div class="col-md-12 text-center">
                 <div class="site-block-27">
                   <ul>
-                    <li><a href="{{ route('product-detail') }}">&lt;</a></li>
+                    <li><a href='{{ route('product-detail', $product->id ) }}'>&lt;</a></li>
                     <li class="active"><span>1</span></li>
-                    <li><a href="{{ route('product-detail') }}">2</a></li>
-                    <li><a href="{{ route('product-detail') }}">3</a></li>
-                    <li><a href="{{ route('product-detail') }}">4</a></li>
-                    <li><a href="{{ route('product-detail') }}">5</a></li>
-                    <li><a href="{{ route('product-detail') }}">&gt;</a></li>
+                    <li><a href='{{ route('product-detail', $product->id ) }}'>2</a></li>
+                    <li><a href='{{ route('product-detail', $product->id ) }}'>3</a></li>
+                    <li><a href='{{ route('product-detail', $product->id ) }}'>4</a></li>
+                    <li><a href='{{ route('product-detail', $product->id ) }}'>5</a></li>
+                    <li><a href='{{ route('product-detail', $product->id ) }}'>&gt;</a></li>
                   </ul>
                 </div>
               </div>

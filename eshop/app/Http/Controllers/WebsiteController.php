@@ -22,9 +22,9 @@ class WebsiteController extends Controller
     //     return view('/layouts/products-list'); 
     // }
 
-    public function productDetail() {
-        return view('/layouts/product-detail'); 
-    }
+    // public function productDetail() {
+    //     return view('/layouts/product-detail'); 
+    // }
 
     public function backOffice() {
         return view('/backoffice'); 

@@ -65,7 +65,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $productDetail = Product::findOrFail($id);
+        return view('/layouts/product-detail', compact('productDetail'));
     }
 
     /**

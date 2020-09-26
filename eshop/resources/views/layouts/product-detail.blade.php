@@ -67,17 +67,16 @@
           <div class="col-md-6">
             <div class="item-entry">
               <a href="#" class="product-item md-height bg-gray d-block">
-                <img src="images/prod_2.png" alt="Image" class="img-fluid">
+                <img src={{ $productDetail->image }} alt="Image" class="img-fluid">
               </a>
               
             </div>
 
           </div>
           <div class="col-md-6">
-            <h2 class="text-black">Gray Shoe</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.</p>
-            <p class="mb-4">Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>
-            <p><strong class="text-primary h4">$50.00</strong></p>
+            <h2 class="text-black">{{ $productDetail->name }}</h2>
+            <p>{{ $productDetail->description }}</p>
+            <p><strong class="text-primary h4">{{ $productDetail->price }}</strong></p>
             <div class="mb-1 d-flex">
               <label for="option-sm" class="d-flex mr-3 mb-3">
                 <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>

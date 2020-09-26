@@ -101,8 +101,9 @@
             <h2 class="text-uppercase">Popular Products</h2>
           </div>
         </div>
+
+        
         <div class="row">
-          
           @if(isset($products))
             @for ($i = 0; $i < 6; $i++)
               @include('layouts.partials.single-product', ['product' => $products[$i]])
@@ -110,7 +111,7 @@
           @else
           <p>Aucun produits pour le moment.</p>
           @endif
-
+          
         </div>
       </div>
     </div>
