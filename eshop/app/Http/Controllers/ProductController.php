@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -16,15 +17,24 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
+        $categories = DB::table('categories')
+            ->join('products', 'categories.id', '=', 'products.category_id')
+            ->select('categories.*')
+            // ordre ascendant
+            // ->orderBy('posts.id', 'ASC') 
+            // ordre descendant
+            ->orderBy('categories.id', 'DESC')
+            ->get(); 
+
         // $posts = DB::table('posts')
-        //     ->join('users', 'posts.user_id', '=', 'users.id')
-        //     ->join('categories', 'posts.category_id', '=', 'categories.id')
-        //     ->select('posts.*', 'users.name as user_name', 'categories.title as category_title')
-        //     // ordre ascendant
-        //     // ->orderBy('posts.id', 'ASC') 
-        //     // ordre descendant
-        //     ->orderBy('posts.id', 'DESC')
-        //     ->get();
+            // ->join('users', 'posts.user_id', '=', 'users.id')
+            // ->join('categories', 'posts.category_id', '=', 'categories.id')
+            // ->select('posts.*', 'users.name as user_name', 'categories.title as category_title')
+            // // ordre ascendant
+            // // ->orderBy('posts.id', 'ASC') 
+            // // ordre descendant
+            // ->orderBy('posts.id', 'DESC')
+            // ->get();
      
 
         
@@ -33,7 +43,7 @@ class ProductController extends Controller
         //     ->select('categories.*', 'categories.title as category')
         //     ->get();
         
-        return view('/layouts/products-list', compact('products'));
+        return view('/layouts/products-list', compact('products', 'categories'));
     }
 
     /**

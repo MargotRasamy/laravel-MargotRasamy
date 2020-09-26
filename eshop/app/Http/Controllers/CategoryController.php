@@ -18,24 +18,25 @@ class CategoryController extends Controller
     public function index($id)
     {
         $category = Category::findOrFail($id);
+        
         // $product = Product::findOrFail($id);
-        // $products = DB::table('products')
-        //     ->join('categories', 'products.category_id', '=', 'categories.id')
-        //     ->select('products.*', 'categories.id as category__id')
-        //     // ordre ascendant
-        //     // ->orderBy('posts.id', 'ASC') 
-        //     // ordre descendant
-        //     ->orderBy('products.id', 'DESC')
-        //     ->get();
+        $products = DB::table('products')
+            ->where('products.category_id', '=', $category->id)
+            ->select('products.*')
+            // ordre ascendant
+            // ->orderBy('posts.id', 'ASC') 
+            // ordre descendant du plus récent
+            ->orderBy('products.id', 'DESC')
+            ->get();
      
-        dd($category->name);
+        // dd($products);
         
         // $categories = DB::table('categories')
         //     ->join('posts', 'posts.category_id', '=', 'categories.id')
         //     ->select('categories.*', 'categories.title as category')
         //     ->get();
         
-        return view('/layouts/products-list', compact('category'));
+        return view('/layouts/products-list', compact('category', 'products'));
    
     }
 

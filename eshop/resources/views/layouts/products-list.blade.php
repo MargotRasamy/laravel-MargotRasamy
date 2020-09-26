@@ -57,11 +57,11 @@
             <div class="site-block-cover-content">
             <h2 class="sub-title">#New Summer Collection 2019</h2>
             <h1>Arrivals Sales</h1>
-            <p><a href="{{ route('products-list') }}" class="btn btn-black rounded-0">Shop Now</a></p>
+            <p><a href=# class="btn btn-black rounded-0">Shop Now</a></p>
             </div>
           </div>
           <div class="col-md-6 order-1 align-self-end">
-            <img src="images/model_4.png" alt="Image" class="img-fluid">
+            <img src="/../images/model_4.png" alt="Image" class="img-fluid">
           </div>
         </div>
       </div>
@@ -118,13 +118,13 @@
               @endfor --}}
 
               @if(isset($category)) 
-              
-                    @include('layouts.partials.single-product', ['category' => $category])
- 
-              @elseif(isset($products) && !isset($category)) 
                 @foreach ($products as $product)
-                  @include('layouts.partials.single-product', ['product' => $product])
+                    @include('layouts.partials.single-product', ['product' => $product, 'category' => $category])
                 @endforeach
+              @elseif(isset($products) && !isset($category) && isset($categories)) 
+                @for ($i = 0; $i < count($products); $i++)
+                  @include('layouts.partials.single-product', ['product' => $products[$i]])
+                @endfor
               @else
               <p>Aucun produits pour le moment.</p>
               @endif
@@ -163,18 +163,18 @@
           <div class="col-lg-8">
             <div class="product-item sm-height full-height bg-gray">
               <a href="#" class="product-category">Women <span>25 items</span></a>
-              <img src="images/model_4.png" alt="Image" class="img-fluid">
+              <img src="/images/model_4.png" alt="Image" class="img-fluid">
             </div>
           </div>
           <div class="col-lg-4">
             <div class="product-item sm-height bg-gray mb-4">
               <a href="#" class="product-category">Men <span>25 items</span></a>
-              <img src="images/model_5.png" alt="Image" class="img-fluid">
+              <img src="/images/model_5.png" alt="Image" class="img-fluid">
             </div>
 
             <div class="product-item sm-height bg-gray">
               <a href="#" class="product-category">Shoes <span>25 items</span></a>
-              <img src="images/model_6.png" alt="Image" class="img-fluid">
+              <img src="/images/model_6.png" alt="Image" class="img-fluid">
             </div>
           </div>
         </div>
@@ -187,7 +187,7 @@
           <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
             <h3 class="footer-heading mb-4">Promo</h3>
             <a href="#" class="block-6">
-              <img src="images/about_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
+              <img src="/images/about_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
               <h3 class="font-weight-light  mb-0">Finding Your Perfect Shirts This Summer</h3>
               <p>Promo from  July 15 &mdash; 25, 2019</p>
             </a>
@@ -257,15 +257,15 @@
     </footer>
   </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/aos.js"></script>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
     
 
 

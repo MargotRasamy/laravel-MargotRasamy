@@ -9,13 +9,13 @@ class Product extends Model
 {
     use HasFactory;
 
-    // /**
-    //  * The attributes that are mass assignable.
-    //  *
-    //  * @var array
-    //  */
-    // public function category()
-    // {
-    //     return $this->belongsTo('App\Models\Category');
-    // }
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
 }
