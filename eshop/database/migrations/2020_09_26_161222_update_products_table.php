@@ -21,8 +21,8 @@ class UpdateProductsTable extends Migration
             $table->string('image');
             $table->text('description');
             $table->bigInteger('stock');
-            // $table->unsignedBigInteger('category_id');
-            // $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
 
     }
@@ -35,13 +35,7 @@ class UpdateProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('name');
-            $table->dropColumn('price');
-            $table->dropColumn('image');
-            $table->dropColumn('description');
-            $table->dropColumn('stock');
-            // $table->dropColumn('category_id');
-            // $table->dropColumn('category_id')->references('id')->on('categories');
+            $table->dropIfExists('products');
         });
     }
 }
