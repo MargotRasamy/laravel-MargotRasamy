@@ -76,21 +76,7 @@
           <div class="col-md-6">
             <h2 class="text-black">{{ $productDetail->name }}</h2>
             <p>{{ $productDetail->description }}</p>
-            <p><strong class="text-primary h4">{{ $productDetail->price }}</strong></p>
-            <div class="mb-1 d-flex">
-              <label for="option-sm" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>
-              </label>
-              <label for="option-md" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-md" name="shop-sizes"></span> <span class="d-inline-block text-black">Medium</span>
-              </label>
-              <label for="option-lg" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-lg" name="shop-sizes"></span> <span class="d-inline-block text-black">Large</span>
-              </label>
-              <label for="option-xl" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-xl" name="shop-sizes"></span> <span class="d-inline-block text-black"> Extra Large</span>
-              </label>
-            </div>
+            <h3><strong class="text-primary">$ {{ $productDetail->price }}</strong></h3>
             <div class="mb-5">
               <div class="input-group mb-3" style="max-width: 120px;">
               <div class="input-group-prepend">
@@ -123,7 +109,7 @@
               <div class="item">
                 <div class="item-entry">
                   <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="images/model_1.png" alt="Image" class="img-fluid">
+                    <img src="/images/model_1.png" alt="Image" class="img-fluid">
                   </a>
                   <h2 class="item-title"><a href="#">Smooth Cloth</a></h2>
                   <strong class="item-price"><del>$46.00</del> $28.00</strong>
@@ -139,7 +125,7 @@
               <div class="item">
                 <div class="item-entry">
                   <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="images/prod_3.png" alt="Image" class="img-fluid">
+                    <img src="/images/prod_3.png" alt="Image" class="img-fluid">
                   </a>
                   <h2 class="item-title"><a href="#">Blue Shoe High Heels</a></h2>
                   <strong class="item-price"><del>$46.00</del> $28.00</strong>
@@ -156,7 +142,7 @@
               <div class="item">
                 <div class="item-entry">
                   <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="images/model_5.png" alt="Image" class="img-fluid">
+                    <img src="/images/model_5.png" alt="Image" class="img-fluid">
                   </a>
                   <h2 class="item-title"><a href="#">Denim Jacket</a></h2>
                   <strong class="item-price"><del>$46.00</del> $28.00</strong>
@@ -174,7 +160,7 @@
               <div class="item">
                 <div class="item-entry">
                   <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="images/prod_1.png" alt="Image" class="img-fluid">
+                    <img src="/images/prod_1.png" alt="Image" class="img-fluid">
                   </a>
                   <h2 class="item-title"><a href="#">Leather Green Bag</a></h2>
                   <strong class="item-price"><del>$46.00</del> $28.00</strong>
@@ -190,7 +176,7 @@
               <div class="item">
                 <div class="item-entry">
                   <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="images/model_7.png" alt="Image" class="img-fluid">
+                    <img src="/images/model_7.png" alt="Image" class="img-fluid">
                   </a>
                   <h2 class="item-title"><a href="#">Yellow Jacket</a></h2>
                   <strong class="item-price">$58.00</strong>
@@ -216,7 +202,7 @@
           <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
             <h3 class="footer-heading mb-4">Promo</h3>
             <a href="#" class="block-6">
-              <img src="images/about_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
+              <img src="/images/about_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
               <h3 class="font-weight-light  mb-0">Finding Your Perfect Shirts This Summer</h3>
               <p>Promo from  July 15 &mdash; 25, 2019</p>
             </a>
