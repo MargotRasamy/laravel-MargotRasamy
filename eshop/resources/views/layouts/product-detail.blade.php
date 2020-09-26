@@ -75,8 +75,12 @@
           </div>
           <div class="col-md-6">
             <h2 class="text-black">{{ $productDetail->name }}</h2>
-            <p>{{ $productDetail->description }}</p>
+            @if(isset($categories))
+              <h5><strong>{{ $categories[0]->name }}</strong></h5>
+            @endif
             <h3><strong class="text-primary">$ {{ $productDetail->price }}</strong></h3>
+            <p>{{ $productDetail->description }}</p>
+            
             <div class="mb-5">
               <div class="input-group mb-3" style="max-width: 120px;">
               <div class="input-group-prepend">
@@ -104,22 +108,18 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 block-3">
-            <div class="nonloop-block-3 owl-carousel">
-              <div class="item">
-
-
-              {{-- @if(isset($products)) 
-                @foreach ($i = 0; $i < count($products); $i++)
-                    @include('layouts.partials.single-product', ['product' => $products[$i+1], 'category' => $categories[$i+1]])
+          
+              @if(isset($products)) 
+                @foreach ($products as $product)
+                    @include('layouts.partials.single-product', ['product' => $product, 'category' => $categories[0] ])
                 @endforeach
               @else
               <p>Aucun produits pour le moment.</p>
-              @endif --}}
+              @endif
 
-            </div>
-          </div>
-        </div>
+            
+         
+      
       </div>
     </div>
 

@@ -122,9 +122,9 @@
                     @include('layouts.partials.single-product', ['product' => $product, 'category' => $category])
                 @endforeach
               @elseif(isset($products) && !isset($category) && isset($categories)) 
-                @for ($i = 1; $i <= count($products); $i++)
-                  @include('layouts.partials.single-product', ['product' => $products[$i]])
-                @endfor
+                @foreach ($products as $i=>$product)
+                  @include('layouts.partials.single-product', ['product' => $product, 'category' => $categories[$i]])
+                @endforeach
               @else
               <p>Aucun produits pour le moment.</p>
               @endif

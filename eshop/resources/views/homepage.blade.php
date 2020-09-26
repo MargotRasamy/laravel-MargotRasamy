@@ -99,7 +99,7 @@
         <div class="row">
           @if(isset($products))
             @for ($i = 0; $i < 6; $i++)
-              @include('layouts.partials.single-product', ['product' => $products[$i]])
+              @include('layouts.partials.single-product', ['product' => $products[$i], 'category' => $categoriesBind[$i]])
             @endfor
           @else
           <p>Aucun produits pour le moment.</p>

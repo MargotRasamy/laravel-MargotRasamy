@@ -20,28 +20,8 @@ class ProductController extends Controller
         $categories = DB::table('categories')
             ->join('products', 'categories.id', '=', 'products.category_id')
             ->select('categories.*')
-            // ordre ascendant
-            // ->orderBy('posts.id', 'ASC') 
-            // ordre descendant
-            ->orderBy('categories.id', 'DESC')
+            ->orderBy('products.id', 'ASC')
             ->get(); 
-
-        // $posts = DB::table('posts')
-            // ->join('users', 'posts.user_id', '=', 'users.id')
-            // ->join('categories', 'posts.category_id', '=', 'categories.id')
-            // ->select('posts.*', 'users.name as user_name', 'categories.title as category_title')
-            // // ordre ascendant
-            // // ->orderBy('posts.id', 'ASC') 
-            // // ordre descendant
-            // ->orderBy('posts.id', 'DESC')
-            // ->get();
-     
-
-        
-        // $categories = DB::table('categories')
-        //     ->join('posts', 'posts.category_id', '=', 'categories.id')
-        //     ->select('categories.*', 'categories.title as category')
-        //     ->get();
         
         return view('/layouts/products-list', compact('products', 'categories'));
     }
@@ -78,21 +58,18 @@ class ProductController extends Controller
         $productDetail = Product::findOrFail($id);
         $products = DB::table('products')
             ->where('products.category_id', '=', $productDetail->category_id)
+            ->where('products.id', '!=', $productDetail->id)
             ->select('products.*')
-            // ordre ascendant
-            // ->orderBy('posts.id', 'ASC') 
-            // ordre descendant du plus récent
             ->orderBy('products.id', 'DESC')
             ->get();
+            
         // dd($productDetail);
         $categories = DB::table('categories')
             ->where('categories.id', '=', $productDetail->category_id)
             ->select('categories.*')
-            // ordre ascendant
-            // ->orderBy('posts.id', 'ASC') 
-            // ordre descendant du plus récent
-            ->orderBy('categories.id', 'DESC')
             ->get();
+
+        // dd($categories);
         return view('/layouts/product-detail', compact('productDetail', 'products', 'categories'));
     }
 

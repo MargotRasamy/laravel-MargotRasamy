@@ -21,8 +21,6 @@ Route::get('/products-list', [ProductController::class, 'index'])->name('product
 Route::get('/categories-products-list/{id}', [CategoryController::class, 'index'])->name('categories-products-list');
 Route::get('product-detail/{id}', [ProductController::class, 'show'])->name('product-detail');
 
-// Route::get('category-detail/{id}', [ProductController::class, 'show'])->name('product-detail');
-
 Route::resource('/products', ProductController::class);
 
 Route::get('/admin', [WebsiteController::class, 'backOffice'])->name('admin');
