@@ -76,7 +76,24 @@ class ProductController extends Controller
     public function show($id)
     {
         $productDetail = Product::findOrFail($id);
-        return view('/layouts/product-detail', compact('productDetail'));
+        $products = DB::table('products')
+            ->where('products.category_id', '=', $productDetail->category_id)
+            ->select('products.*')
+            // ordre ascendant
+            // ->orderBy('posts.id', 'ASC') 
+            // ordre descendant du plus récent
+            ->orderBy('products.id', 'DESC')
+            ->get();
+        // dd($productDetail);
+        $categories = DB::table('categories')
+            ->where('categories.id', '=', $productDetail->category_id)
+            ->select('categories.*')
+            // ordre ascendant
+            // ->orderBy('posts.id', 'ASC') 
+            // ordre descendant du plus récent
+            ->orderBy('categories.id', 'DESC')
+            ->get();
+        return view('/layouts/product-detail', compact('productDetail', 'products', 'categories'));
     }
 
     /**
