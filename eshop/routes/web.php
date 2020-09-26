@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('products-listed/{request}', [ProductController::class, 'filter'])->name('products-listed');
 Route::get('/', [WebsiteController::class, 'index'])->name('homepage');
 Route::get('/products-list', [ProductController::class, 'index'])->name('products-list');
 Route::get('/categories-products-list/{id}', [CategoryController::class, 'index'])->name('categories-products-list');

@@ -18,12 +18,12 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $categories = DB::table('categories')
-            ->join('products', 'categories.id', '=', 'products.category_id')
-            ->select('categories.*')
-            ->orderBy('products.id', 'ASC')
-            ->get(); 
+        ->join('products', 'categories.id', '=', 'products.category_id')
+        ->select('categories.*')
+        ->orderBy('products.id', 'ASC')
+        ->get(); 
         
-        return view('/layouts/products-list', compact('products', 'categories'));
+        return view('/layouts/products-list', compact('products', 'categories'));  
     }
 
     /**
@@ -105,5 +105,24 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function filter(Request $request)
+    {
+        $products = Product::all();
+        $categories = DB::table('categories')
+            ->join('products', 'categories.id', '=', 'products.category_id')
+            ->select('categories.*')
+            ->orderBy('products.price', 'ASC')
+            ->get();
+
+        dd($request);
+        return view('/layouts/products-list', compact('products', 'categories'));
     }
 }

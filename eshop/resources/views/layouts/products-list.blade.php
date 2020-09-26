@@ -87,24 +87,12 @@
                 <div class="float-md-left"><h2 class="text-black h5">Shop All</h2></div>
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
-                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Latest
+                    <button type="button" class="btn btn-black btn-sm dropdown-toggle px-4" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Sort price
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="#">Men</a>
-                      <a class="dropdown-item" href="#">Women</a>
-                      <a class="dropdown-item" href="#">Children</a>
-                    </div>
-                  </div>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                      <a class="dropdown-item" href="#">Relevance</a>
-                      <a class="dropdown-item" href="#">Name, A to Z</a>
-                      <a class="dropdown-item" href="#">Name, Z to A</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Price, low to high</a>
-                      <a class="dropdown-item" href="#">Price, high to low</a>
+                      <a class="dropdown-item" href={{ route('products-listed', [ 'filterBy' => 'lowtohigh']) }}>Low to high</a>
+                      <a class="dropdown-item" href="#">High to low</a>
                     </div>
                   </div>
                 </div>
@@ -151,33 +139,6 @@
           
         </div>
 
-      </div>
-    </div>
-
-    <div class="site-section">
-      <div class="container">
-        <div class="title-section mb-5">
-          <h2 class="text-uppercase"><span class="d-block">Discover</span> The Collections</h2>
-        </div>
-        <div class="row align-items-stretch">
-          <div class="col-lg-8">
-            <div class="product-item sm-height full-height bg-gray">
-              <a href="#" class="product-category">Women <span>25 items</span></a>
-              <img src="/images/model_4.png" alt="Image" class="img-fluid">
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="product-item sm-height bg-gray mb-4">
-              <a href="#" class="product-category">Men <span>25 items</span></a>
-              <img src="/images/model_5.png" alt="Image" class="img-fluid">
-            </div>
-
-            <div class="product-item sm-height bg-gray">
-              <a href="#" class="product-category">Shoes <span>25 items</span></a>
-              <img src="/images/model_6.png" alt="Image" class="img-fluid">
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
