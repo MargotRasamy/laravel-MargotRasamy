@@ -15,7 +15,7 @@ class WebsiteController extends Controller
     public function index() {
         $products = Product::all();
         $categories = Category::all();
-        return view('/homepage', compact('products')); 
+        return view('/homepage', compact('products', 'categories')); 
     }
 
     // public function productsList() {

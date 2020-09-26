@@ -117,11 +117,14 @@
                  @include('layouts.partials.single-product', ['product' => $products]) 
               @endfor --}}
 
+              @if(isset($category)) 
               
-              @if(isset($products))
+                    @include('layouts.partials.single-product', ['category' => $category])
+ 
+              @elseif(isset($products) && !isset($category)) 
                 @foreach ($products as $product)
                   @include('layouts.partials.single-product', ['product' => $product])
-              @endforeach
+                @endforeach
               @else
               <p>Aucun produits pour le moment.</p>
               @endif
@@ -131,7 +134,7 @@
             <div class="row">
               <div class="col-md-12 text-center">
                 <div class="site-block-27">
-                  <ul>
+                  {{-- <ul>
                     <li><a href='{{ route('product-detail', $product->id ) }}'>&lt;</a></li>
                     <li class="active"><span>1</span></li>
                     <li><a href='{{ route('product-detail', $product->id ) }}'>2</a></li>
@@ -139,7 +142,7 @@
                     <li><a href='{{ route('product-detail', $product->id ) }}'>4</a></li>
                     <li><a href='{{ route('product-detail', $product->id ) }}'>5</a></li>
                     <li><a href='{{ route('product-detail', $product->id ) }}'>&gt;</a></li>
-                  </ul>
+                  </ul> --}}
                 </div>
               </div>
             </div>

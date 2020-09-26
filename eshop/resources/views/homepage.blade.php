@@ -71,27 +71,18 @@
           <h2 class="text-uppercase"><span class="d-block">Discover</span> The Collections</h2>
         </div>
         <div class="row align-items-stretch">
-          <div class="col-lg-4">
-            <div class="product-item sm-height bg-gray">
-              <a href="{{ route('products-list') }}" class="product-category">Women <span>25 items</span></a>
-              <img src="images/model_4.png" alt="Image" class="img-fluid">
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="product-item sm-height bg-gray">
-              <a href="{{ route('products-list') }}" class="product-category">Men <span>25 items</span></a>
-              <img src="images/model_5.png" alt="Image" class="img-fluid">
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="product-item sm-height bg-gray">
-              <a href="{{ route('products-list') }}" class="product-category">Shoes <span>25 items</span></a>
-              <img src="images/model_6.png" alt="Image" class="img-fluid">
-            </div>
-          </div>
+
+          @if(isset($categories))
+            @for ($i = 0; $i < count($categories); $i++)
+              @include('layouts.partials.single-category', ['category' => $categories[$i]])
+            @endfor
+          @else
+          <p>Aucune catégorie pour le moment.</p>
+
+          @endif
         </div>
       </div>
-      <p><a href="{{ route('products-list') }}" class="btn btn-black rounded-0 col-2 offset-5 mt-3">SEE ALL CATEGORIES</a></p>
+      {{-- <p><a href="{{ route('products-list') }}" class="btn btn-black rounded-0 col-2 offset-5 mt-3">SEE ALL CATEGORIES</a></p> --}}
     </div>
 
 

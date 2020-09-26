@@ -26,7 +26,7 @@ class CategoryFactory extends Factory
     public function definition()
     {
         $this->faker = FakerFactory::create();
-        $this->faker->addProvider(new LoremFlickrProvider($this->faker));
+        // $this->faker->addProvider(new LoremFlickrProvider($this->faker));
         // $this->faker->addProvider(new PicsumPhotosProvider($this->faker));
         \Bezhanov\Faker\ProviderCollectionHelper::addAllProvidersTo($this->faker);
 
@@ -35,7 +35,7 @@ class CategoryFactory extends Factory
         return [
 
             'name' => $this->faker->department,
-            'image' => $this->faker->imageUrl(1280, 720, ['product']),
+            'image' => $this->faker->imageUrl(400, 500, 'people'),
             // 'updated_at' => $this->faker->dateTime,
             // 'created_at' => $this->faker->dateTime,
         ];

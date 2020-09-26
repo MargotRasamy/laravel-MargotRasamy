@@ -5,35 +5,38 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $products = Product::all();
-        // $posts = DB::table('posts')
-        //     ->join('users', 'posts.user_id', '=', 'users.id')
-        //     ->join('categories', 'posts.category_id', '=', 'categories.id')
-        //     ->select('posts.*', 'users.name as user_name', 'categories.title as category_title')
+        $category = Category::findOrFail($id);
+        // $product = Product::findOrFail($id);
+        // $products = DB::table('products')
+        //     ->join('categories', 'products.category_id', '=', 'categories.id')
+        //     ->select('products.*', 'categories.id as category__id')
         //     // ordre ascendant
         //     // ->orderBy('posts.id', 'ASC') 
         //     // ordre descendant
-        //     ->orderBy('posts.id', 'DESC')
+        //     ->orderBy('products.id', 'DESC')
         //     ->get();
      
-
+        dd($category->name);
         
         // $categories = DB::table('categories')
         //     ->join('posts', 'posts.category_id', '=', 'categories.id')
         //     ->select('categories.*', 'categories.title as category')
         //     ->get();
         
-        return view('/layouts/products-list', compact('products'));
+        return view('/layouts/products-list', compact('category'));
+   
     }
 
     /**
@@ -65,8 +68,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $productDetail = Product::findOrFail($id);
-        return view('/layouts/product-detail', compact('productDetail'));
+        //
     }
 
     /**
