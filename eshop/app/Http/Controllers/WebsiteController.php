@@ -14,9 +14,9 @@ class WebsiteController extends Controller
         return view('/homepage'); 
     }
 
-    public function productsList() {
-        return view('/layouts/products-list'); 
-    }
+    // public function productsList() {
+    //     return view('/layouts/products-list'); 
+    // }
 
     public function productDetail() {
         return view('/layouts/product-detail'); 

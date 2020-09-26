@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WebsiteController::class, 'index'])->name('homepage');
-Route::get('/products-list', [WebsiteController::class, 'productsList'])->name('products-list');
+Route::get('/products-list', [ProductController::class, 'index'])->name('products-list');
 Route::get('/product-detail', [WebsiteController::class, 'productDetail'])->name('product-detail');
-Route::resource('/pro', ProductController::class);
+Route::resource('/products', ProductController::class);
 Route::get('/admin', [WebsiteController::class, 'backOffice'])->name('admin');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
