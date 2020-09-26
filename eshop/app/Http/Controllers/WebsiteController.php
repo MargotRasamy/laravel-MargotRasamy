@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
@@ -11,7 +13,9 @@ class WebsiteController extends Controller
      * @return View
      */
     public function index() {
-        return view('/homepage'); 
+        $products = Product::all();
+        $categories = Category::all();
+        return view('/homepage', compact('products')); 
     }
 
     // public function productsList() {
