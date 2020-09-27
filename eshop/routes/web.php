@@ -3,6 +3,9 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebsiteController;
+use App\Models\Category;
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +27,17 @@ Route::resource('/products', ProductController::class);
 
 Route::get('/admin', [WebsiteController::class, 'backOffice'])->name('admin');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    
+        $products = Product::all();
+        $categories = Category::all();
+        $categoriesBind = DB::table('categories')
+            ->join('products', 'categories.id', '=', 'products.category_id')
+            ->select('categories.*')
+            ->orderBy('products.id', 'ASC')
+            ->get(); 
+    
+
+    return view('dashboard', compact('products', 'categories', 'categoriesBind'));
 })->name('dashboard');
 
 Route::get('products-listed/{request}', [ProductController::class, 'filter'])->name('products-listed');
