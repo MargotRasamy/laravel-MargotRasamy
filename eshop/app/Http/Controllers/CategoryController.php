@@ -18,25 +18,19 @@ class CategoryController extends Controller
     public function index($id)
     {
         $category = Category::findOrFail($id);
-        
-        // $product = Product::findOrFail($id);
+
         $products = DB::table('products')
             ->where('products.category_id', '=', $category->id)
             ->select('products.*')
-            // ordre ascendant
-            // ->orderBy('posts.id', 'ASC') 
-            // ordre descendant du plus récent
             ->orderBy('products.id', 'DESC')
             ->get();
         
-        // dd($products);
+        $isLoggedIn = DB::table('sessions')
+            ->where('user_id', '!=', 'null')
+            ->select('sessions.*')
+            ->get();
         
-        // $categories = DB::table('categories')
-        //     ->join('posts', 'posts.category_id', '=', 'categories.id')
-        //     ->select('categories.*', 'categories.title as category')
-        //     ->get();
-        
-        return view('/layouts/products-list', compact('category', 'products'));
+        return view('/layouts/products-list', compact('category', 'products', 'isLoggedIn'));
    
     }
 
@@ -131,6 +125,11 @@ class CategoryController extends Controller
                 ->orderBy('products.price', 'DESC')
                 ->get();
         }
-        return view('/layouts/products-list', compact('products', 'category'));
+
+        $isLoggedIn = DB::table('sessions')
+            ->where('user_id', '!=', 'null')
+            ->select('sessions.*')
+            ->get();
+        return view('/layouts/products-list', compact('products', 'category', 'isLoggedIn'));
     }
 }

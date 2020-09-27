@@ -18,7 +18,7 @@
                     <x-jet-nav-link href="{{ route('products-list') }}" :active="request()->routeIs('products-list')">
                         {{ __('SHOP') }}
                     </x-jet-nav-link>
-                    <a href="{{ url('/shoppingbag') }}" class="icons-btn d-inline-block bg-gray"><span class="icon-shopping-bag"></span></a>
+                    <a href="{{ route('shopping-bag') }}" class="icons-btn d-inline-block bg-gray"><span class="icon-shopping-bag"></span></a>
                     {{-- <a href="{{ route('dashboard') }}">Home</a>
                     <a href="{{ route('products-list') }}">Home</a> --}}
                 </div>

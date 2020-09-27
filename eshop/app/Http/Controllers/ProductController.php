@@ -22,8 +22,12 @@ class ProductController extends Controller
         ->select('categories.*')
         ->orderBy('products.id', 'ASC')
         ->get(); 
+        $isLoggedIn = DB::table('sessions')
+            ->where('user_id', '!=', 'null')
+            ->select('sessions.*')
+            ->get();
         
-        return view('/layouts/products-list', compact('products', 'categories'));  
+        return view('/layouts/products-list', compact('products', 'categories', 'isLoggedIn'));  
     }
 
     /**
@@ -69,8 +73,13 @@ class ProductController extends Controller
             ->select('categories.*')
             ->get();
 
+        $isLoggedIn = DB::table('sessions')
+            ->where('user_id', '!=', 'null')
+            ->select('sessions.*')
+            ->get();
+
         // dd($categories);
-        return view('/layouts/product-detail', compact('productDetail', 'products', 'categories'));
+        return view('/layouts/product-detail', compact('productDetail', 'products', 'categories', 'isLoggedIn'));
     }
 
     /**
@@ -133,7 +142,11 @@ class ProductController extends Controller
             ->orderBy('products.id', 'ASC')
             ->get();
         }
+        $isLoggedIn = DB::table('sessions')
+            ->where('user_id', '!=', 'null')
+            ->select('sessions.*')
+            ->get();
         // dd($request->path());
-        return view('/layouts/products-list', compact('products', 'categories'));
+        return view('/layouts/products-list', compact('products', 'categories', 'isLoggedIn'));
     }
 }

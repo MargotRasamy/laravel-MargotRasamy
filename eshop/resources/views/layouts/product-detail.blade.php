@@ -2,10 +2,14 @@
 <html lang="en">
     @include('layouts.partials.head')
   <body>
-  
+  @if(isset($isLoggedIn))
+      @include('navigation-dropdown')
+    @else
+      @include('layouts.partials.header')
+    @endif
   <div class="site-wrap">
     
-    @include('layouts.partials.header')
+    
    
 
     <div class="bg-light py-3">
@@ -35,22 +39,31 @@
             @endif
             <h3><strong class="text-primary">$ {{ $productDetail->price }}</strong></h3>
             <p>{{ $productDetail->description }}</p>
+
+
+
+            <form action="{{url('/add-cart')}}" method="POST">
+
+              @csrf
+              <div class="mb-5">
+              
+                <div class="input-group mb-3" style="max-width: 120px;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                </div>
+                <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                </div>
+              </div>
+  
+              </div>
+              <p><input type="submit" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" value="Add to cart"></a></p>
+
+            </form>
             
-            <div class="mb-5">
-              <div class="input-group mb-3" style="max-width: 120px;">
-              <div class="input-group-prepend">
-                <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-              </div>
-              <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-              <div class="input-group-append">
-                <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-              </div>
-            </div>
-
-            </div>
-            <p><a href="cart.html" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Add To Cart</a></p>
-
           </div>
+
         </div>
       </div>
     </div>

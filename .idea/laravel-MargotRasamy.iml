@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/asm89/stack-cors" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/bacon/bacon-qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/barryvdh/laravel-debugbar" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/bluemmb/faker-picsum-photos-provider" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/composer" />
@@ -36,6 +37,7 @@
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/league/commonmark" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/livewire/livewire" />
+      <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/maximebf/debugbar" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/mbezhanov/faker-provider-collection" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/mobiledetect/mobiledetectlib" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/mockery/mockery" />
@@ -91,6 +93,7 @@
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/symfony/debug" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/symfony/deprecation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/symfony/error-handler" />
       <excludeFolder url="file://$MODULE_DIR$/eshop/vendor/symfony/event-dispatcher" />

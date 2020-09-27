@@ -1,6 +1,10 @@
 @include('layouts.partials.head')
 
-@include('layouts.partials.header')
+@if(isset($isLoggedIn))
+      @include('navigation-dropdown')
+  @else
+      @include('layouts.partials.header')
+  @endif
 
 <div class="bg-light py-3">
     <div class="container">

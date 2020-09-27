@@ -3,9 +3,11 @@
   @include('layouts.partials.head')
 
   <body>
-  
-    @include('layouts.partials.header')
-    
+    @if(isset($isLoggedIn))
+      @include('navigation-dropdown')
+    @else
+      @include('layouts.partials.header')
+    @endif
     <div class="site-blocks-cover inner-page" data-aos="fade">
       <div class="container">
         <div class="row">

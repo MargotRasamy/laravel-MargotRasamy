@@ -122,6 +122,9 @@
       <path value="$PROJECT_DIR$/eshop/vendor/jenssegers/agent" />
       <path value="$PROJECT_DIR$/eshop/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/eshop/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/eshop/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/eshop/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/eshop/vendor/maximebf/debugbar" />
     </include_path>
   </component>
   <component name="PhpUnit">

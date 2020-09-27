@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ShoppingBagController extends Controller
 {
@@ -13,7 +15,12 @@ class ShoppingBagController extends Controller
      */
     public function index()
     {
-        return view('/layouts/shopping-bag');
+
+        $isLoggedIn = DB::table('sessions')
+            ->where('user_id', '!=', 'null')
+            ->select('sessions.*')
+            ->get();
+        return view('/layouts/shopping-bag', compact('isLoggedIn'));
     }
 
     /**
@@ -22,8 +29,8 @@ class ShoppingBagController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {  
+        
     }
 
     /**
@@ -34,7 +41,14 @@ class ShoppingBagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // print_r($request->input());
+        // $isLoggedIn = DB::table('sessions')
+        //     ->where('user_id', '!=', 'null')
+        //     ->select('sessions.*')
+        //     ->get();
+        // dd($isLoggedIn);
+       print_r('hello');
+    
     }
 
     /**

@@ -3,6 +3,11 @@
     @include('layouts.partials.head')
   <body>
   
+    @if(isset($isLoggedIn))
+      @include('navigation-dropdown')
+    @else
+      @include('layouts.partials.header')
+    @endif
   
   @include('layouts.partials.header')
 

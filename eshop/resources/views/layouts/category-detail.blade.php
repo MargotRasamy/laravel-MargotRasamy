@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     @include('layouts.partials.head')
+    
+    
+    
   <body>
-  
+    @if(isset($isLoggedIn))
+        @include('navigation-dropdown')
+      @else
+        @include('layouts.partials.header')
+      @endif
   <div class="site-wrap">
     
-
-    @include('layouts.partials.header')
-    
-   
-
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">

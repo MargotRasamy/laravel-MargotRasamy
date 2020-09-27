@@ -27,8 +27,11 @@ class WebsiteController extends Controller
             ->get();
         if(isset($isLoggedIn)) {
             return redirect()->route('dashboard');
+        } 
+        else {
+            return view('/homepage', compact('products', 'categories', 'categoriesBind', 'isLoggedIn')); 
         }
-        return view('/homepage', compact('products', 'categories', 'categoriesBind', 'isLoggedIn')); 
+        
     }
 
     // public function productsList() {

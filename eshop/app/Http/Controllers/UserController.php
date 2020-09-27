@@ -83,21 +83,4 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function sessionRetrieve(Request $request, $id)
-    {
-
-        // dd($request->session());
-        $isLoggedIn = DB::table('sessions')
-            ->where('user_id', '!=', 'null')
-            ->select('sessions.*')
-            ->get();
-        dd($isLoggedIn);
-    }
 }
