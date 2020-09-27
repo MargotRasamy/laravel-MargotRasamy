@@ -47,7 +47,9 @@ class ShoppingBagController extends Controller
         //     ->select('sessions.*')
         //     ->get();
         // dd($isLoggedIn);
-       print_r('hello');
+        
+        $quantityProducts = $request->input('quantity');
+        return redirect()->route('shopping-bag');
     
     }
 

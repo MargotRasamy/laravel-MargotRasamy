@@ -43,7 +43,6 @@
 
 
             <form action="{{url('/add-cart')}}" method="POST">
-
               @csrf
               <div class="mb-5">
               
@@ -51,14 +50,14 @@
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
                 </div>
-                <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <input type="text" class="form-control text-center" id="quantity" name="quantity" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <div class="input-group-append">
                   <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                 </div>
               </div>
   
               </div>
-              <p><input type="submit" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" value="Add to cart"></a></p>
+              <p><input type="submit" name="submit" id="submit" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" value="Add to cart"></a></p>
 
             </form>
             
