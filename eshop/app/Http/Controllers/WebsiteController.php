@@ -34,13 +34,9 @@ class WebsiteController extends Controller
         
     }
 
-    // public function productsList() {
-    //     return view('/layouts/products-list'); 
-    // }
-
-    // public function productDetail() {
-    //     return view('/layouts/product-detail'); 
-    // }
+    // Super sympa le projet ecommerce en Laravel, Pierre ! J'ai beaucoup appris mais malheureusement, 
+    // je n'ai pas eu le temps de tout faire car j'ai pris beaucoup de temps pour me familiariser avec Laravel :P
+    // Aussi, j'ai rencontré plusieurs bugs dû au cache qu'il fallait clear. Merci pour ce projet !
 
     public function backOffice() {
         return view('/backoffice'); 

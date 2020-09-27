@@ -18,7 +18,7 @@ class ProductsTableSeeder extends Seeder
     {
         Schema::disableForeignKeyConstraints();
         DB::table('products')->truncate();
-        Product::factory()->times(50)->create();
+        Product::factory()->times(200)->create();
         Schema::enableForeignKeyConstraints();
     }
 }

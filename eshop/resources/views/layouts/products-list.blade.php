@@ -63,10 +63,7 @@
             </div>
             <div class="row mb-5">
 
-{{-- 
-              @for ($i = 0; $i < 24; $i++)
-                 @include('layouts.partials.single-product', ['product' => $products]) 
-              @endfor --}}
+
 
               @if(isset($category)) 
                 @foreach ($products as $product)

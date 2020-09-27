@@ -40,16 +40,14 @@ class ShoppingBagController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        // print_r($request->input());
-        // $isLoggedIn = DB::table('sessions')
-        //     ->where('user_id', '!=', 'null')
-        //     ->select('sessions.*')
-        //     ->get();
-        // dd($isLoggedIn);
+    {        
+        $quantityProducts = $request->input("quantity");
+        $productName = $request->input("product_name");
+        $productPrice = $request->input("product_price");
+        $productImage = $request->input("product_image");
         
-        $quantityProducts = $request->input('quantity');
-        return redirect()->route('shopping-bag');
+        // return redirect()->route('shopping-bag');
+        return view('/layouts/shopping-bag', compact('productName', 'productPrice', 'productImage', 'quantityProducts'));
     
     }
 

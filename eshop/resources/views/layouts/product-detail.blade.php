@@ -51,11 +51,14 @@
                   <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
                 </div>
                 <input type="text" class="form-control text-center" id="quantity" name="quantity" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                
                 <div class="input-group-append">
                   <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                 </div>
               </div>
-  
+              <input type="hidden" class="form-control text-center" id="product_name" name="product_name" value={{ $productDetail->name }}>
+              <input type="hidden" class="form-control text-center" id="product_price" name="product_price" value={{ $productDetail->price }}>
+              <input type="hidden" class="form-control text-center" id="product_image" name="product_image" value={{ $productDetail->image }}>
               </div>
               <p><input type="submit" name="submit" id="submit" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" value="Add to cart"></a></p>
 

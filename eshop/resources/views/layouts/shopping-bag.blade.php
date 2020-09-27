@@ -9,7 +9,7 @@
 <div class="bg-light py-3">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong></div>
+        <div class="col-md-12 mb-0"><a href={{ route('homepage') }}>Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong></div>
       </div>
     </div>
   </div>
@@ -19,6 +19,8 @@
       <div class="row mb-5">
         <form class="col-md-12" method="post">
           <div class="site-blocks-table">
+
+        @if(isset($productName) && $quantityProducts >= 1)
             <table class="table table-bordered">
               <thead>
                 <tr>
@@ -32,12 +34,18 @@
               <tbody>
 
 
+             
+                  @include('layouts.partials.product-added', ['productImage' => $productImage,'productName' => $productName,'productPrice' => $productPrice ])
+             
+                  
                 
-                @include('layouts.partials.product-added')
-
               
               </tbody>
             </table>
+            @else
+              <h6>You have no products added to the cart yet.</h6>
+            @endif
+
           </div>
         </form>
       </div>
