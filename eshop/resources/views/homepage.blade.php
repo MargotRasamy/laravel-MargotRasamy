@@ -106,7 +106,7 @@
           @endif
           
         </div>
-        <p><a href="{{ route('products-list') }}" class="btn btn-black rounded-0 col-4 offset-4 mt-3">SEE ALL CATEGORIES</a></p>
+        <p><a href="{{ route('products-list') }}" class="btn btn-black rounded-0 col-4 offset-4 mt-3">SEE ALL PRODUCTS</a></p>
       </div>
     </div>
 

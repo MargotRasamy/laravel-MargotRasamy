@@ -91,8 +91,13 @@
                       Sort price
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href={{ route('products-listed', [ 'filterBy' => 'lowtohigh']) }}>Low to high</a>
-                      <a class="dropdown-item" href="#">High to low</a>
+                      @if (isset($category)) 
+                        <a class="dropdown-item" href="{{ route('categories-products-listed', [ 'id' => $category->id, 'request' =>  'lowtohigh']) }}">Low to high</a>
+                        <a class="dropdown-item" href="{{ route('categories-products-listed', [ 'id' => $category->id, 'request' =>  'hightolow']) }}">High to low</a>
+                      @else
+                        <a class="dropdown-item" href="{{ route('products-listed', ['request' =>  'lowtohigh']) }}">Low to high</a>
+                        <a class="dropdown-item" href="{{ route('products-listed', ['request' =>  'hightolow']) }}">High to low</a>
+                      @endif
                     </div>
                   </div>
                 </div>

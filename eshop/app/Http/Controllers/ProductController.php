@@ -115,14 +115,25 @@ class ProductController extends Controller
      */
     public function filter(Request $request)
     {
-        $products = Product::all();
-        $categories = DB::table('categories')
+        if($request->path() === 'products-listed/lowtohigh') {
+            $products = Product::all()
+            ->sortBy('price');
+            $categories = DB::table('categories')
             ->join('products', 'categories.id', '=', 'products.category_id')
             ->select('categories.*')
-            ->orderBy('products.price', 'ASC')
+            ->orderBy('products.id', 'ASC')
             ->get();
-
-        dd($request);
+        } 
+        else if ($request->path() === 'products-listed/hightolow') {
+            $products = Product::all()
+            ->sortByDesc('price');
+            $categories = DB::table('categories')
+            ->join('products', 'categories.id', '=', 'products.category_id')
+            ->select('categories.*')
+            ->orderBy('products.id', 'ASC')
+            ->get();
+        }
+        // dd($request->path());
         return view('/layouts/products-list', compact('products', 'categories'));
     }
 }

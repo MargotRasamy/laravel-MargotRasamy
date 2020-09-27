@@ -105,4 +105,32 @@ class CategoryController extends Controller
     {
         //
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function filter(Request $request, $id)
+    {
+        if ($request->path() === 'categories-products-listed/' . $id . '/lowtohigh') {
+            $category = Category::findOrFail($id);
+            $products = DB::table('products')
+                ->where('products.category_id', '=', $category->id)
+                ->select('products.*')
+                ->orderBy('products.price', 'ASC')
+                ->get();
+        }
+        else if ($request->path() === 'categories-products-listed/' . $id . '/hightolow') {
+            $category = Category::findOrFail($id);
+            $products = DB::table('products')
+                ->where('products.category_id', '=', $category->id)
+                ->select('products.*')
+                ->orderBy('products.price', 'DESC')
+                ->get();
+        }
+        return view('/layouts/products-list', compact('products', 'category'));
+    }
 }

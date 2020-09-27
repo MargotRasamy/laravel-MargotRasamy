@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('products-listed/{request}', [ProductController::class, 'filter'])->name('products-listed');
 Route::get('/', [WebsiteController::class, 'index'])->name('homepage');
 Route::get('/products-list', [ProductController::class, 'index'])->name('products-list');
 Route::get('/categories-products-list/{id}', [CategoryController::class, 'index'])->name('categories-products-list');
@@ -27,3 +26,6 @@ Route::get('/admin', [WebsiteController::class, 'backOffice'])->name('admin');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('products-listed/{request}', [ProductController::class, 'filter'])->name('products-listed');
+Route::get('categories-products-listed/{id?}/{request}', [CategoryController::class, 'filter'])->name('categories-products-listed');
