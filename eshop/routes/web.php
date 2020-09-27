@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShoppingBagController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebsiteController;
 use App\Models\Category;
 use App\Models\Product;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [WebsiteController::class, 'index'])->name('homepage');
+Route::get('/', [WebsiteController::class, 'index'] )->name('homepage');
 Route::get('/products-list', [ProductController::class, 'index'])->name('products-list');
 Route::get('/categories-products-list/{id}', [CategoryController::class, 'index'])->name('categories-products-list');
 Route::get('product-detail/{id}', [ProductController::class, 'show'])->name('product-detail');
@@ -35,10 +38,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
             ->select('categories.*')
             ->orderBy('products.id', 'ASC')
             ->get(); 
-    
+        $isLoggedIn = DB::table('sessions')
+            ->where('user_id', '!=', 'null')
+            ->select('sessions.*')
+            ->get();
 
-    return view('dashboard', compact('products', 'categories', 'categoriesBind'));
+    return view('dashboard', compact('products', 'categories', 'categoriesBind', 'isLoggedIn'));
 })->name('dashboard');
 
 Route::get('products-listed/{request}', [ProductController::class, 'filter'])->name('products-listed');
 Route::get('categories-products-listed/{id?}/{request}', [CategoryController::class, 'filter'])->name('categories-products-listed');
+Route::get('shopping-bag', [ShoppingBagController::class, 'index'])->name('shopping-bag');

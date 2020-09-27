@@ -18,11 +18,14 @@
                     <x-jet-nav-link href="{{ route('products-list') }}" :active="request()->routeIs('products-list')">
                         {{ __('SHOP') }}
                     </x-jet-nav-link>
+                    <a href="{{ url('/shoppingbag') }}" class="icons-btn d-inline-block bg-gray"><span class="icon-shopping-bag"></span></a>
                     {{-- <a href="{{ route('dashboard') }}">Home</a>
                     <a href="{{ route('products-list') }}">Home</a> --}}
                 </div>
             </div>
 
+
+            
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-jet-dropdown align="right" width="48">
@@ -31,22 +34,20 @@
                             <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                         </button>
                     </x-slot>
-
+                   
                     <x-slot name="content">
                         <!-- Account Management -->
-                        <div class="block px-4 py-2 text-xs text-gray-400">
-                            {{ __('Manage Account') }}
-                        </div>
+                       
 
-                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                        {{-- <x-jet-dropdown-link href="{{ route('profile.show') }}">
                             {{ __('Profile') }}
-                        </x-jet-dropdown-link>
+                        </x-jet-dropdown-link> --}}
 
-                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                        {{-- @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                             <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                 {{ __('API Tokens') }}
                             </x-jet-dropdown-link>
-                        @endif
+                        @endif --}}
 
                         <div class="border-t border-gray-100"></div>
 

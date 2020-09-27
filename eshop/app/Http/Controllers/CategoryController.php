@@ -28,7 +28,7 @@ class CategoryController extends Controller
             // ordre descendant du plus récent
             ->orderBy('products.id', 'DESC')
             ->get();
-     
+        
         // dd($products);
         
         // $categories = DB::table('categories')

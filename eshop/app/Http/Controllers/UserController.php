@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -80,5 +81,23 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function sessionRetrieve(Request $request, $id)
+    {
+
+        // dd($request->session());
+        $isLoggedIn = DB::table('sessions')
+            ->where('user_id', '!=', 'null')
+            ->select('sessions.*')
+            ->get();
+        dd($isLoggedIn);
     }
 }

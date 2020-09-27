@@ -21,7 +21,14 @@ class WebsiteController extends Controller
             ->select('categories.*')
             ->orderBy('products.id', 'ASC')
             ->get(); 
-        return view('/homepage', compact('products', 'categories', 'categoriesBind')); 
+        $isLoggedIn = DB::table('sessions')
+            ->where('user_id', '!=', 'null')
+            ->select('sessions.*')
+            ->get();
+        if(isset($isLoggedIn)) {
+            return redirect()->route('dashboard');
+        }
+        return view('/homepage', compact('products', 'categories', 'categoriesBind', 'isLoggedIn')); 
     }
 
     // public function productsList() {
